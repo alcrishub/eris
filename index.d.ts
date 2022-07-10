@@ -2619,6 +2619,103 @@ declare namespace Eris {
     flattenErrors(errors: HTTPResponse, keyPrefix?: string): string[];
   }
 
+  export class EmbedConstructor implements EmbedOptions {
+    author?: EmbedAuthorOptions;
+    color?: number;
+    description?: string;
+    fields?: EmbedField[];
+    footer?: EmbedFooterOptions;
+    image?: EmbedImageOptions;
+    thumbnail?: EmbedImageOptions;
+    timestamp?: Date | string;
+    title?: string;
+    url?: string;
+    constructor(data?: EmbedOptions);
+    /**
+		 * Sets the title of the embed
+		 * @param title The new title of the embed
+		 */
+    setTitle(title: string): this;
+    /**
+		 * Sets the description of the embed
+		 * @param description The new description of the embed
+		 */
+    setDescription(description: string): this;
+		/**
+		 * Sets the title URL of the embed
+		 * @param url The new URL of the title
+		 */
+		setURL(url: string): this;
+		/**
+		 * Sets the timestamp of the embed
+		 * @param stringDate A string representation of a date. [See](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+		 * @example
+		 * embed.setTimestamp('Jul 9, 2016');
+		 */
+		setTimestamp(stringDate: string): this;
+		/**
+		 * Sets the timestamp of the embed
+		 * @param unixTimestamp The new timestamp
+		 * @example
+		 * embed.setTimestamp(Date.now());
+		 */
+		setTimestamp(unixTimestamp: number): this;
+		/**
+		 * Sets the timestamp of the embed
+		 * @param date The new timestamp of the embed
+		 */
+		setTimestamp(date: Date): this;
+		/**
+		 * Sets the color of the embed
+		 * @param hex A hexadecimal number
+		 * @example
+		 * embed.setColor(0xFFFFFF);
+		 */
+		setColor(hex: number): this;
+		/**
+		 * Sets the color of the embed with an rgb representation
+		 * @example
+		 * embed.setColor(234, 26, 20);
+		 */
+		setColor(r: number, g: number, b: number): this;
+		/**
+		 * Sets the embed color to a random color
+		 */
+		setColor(random: 'RANDOM'): this;
+		/**
+		 * Sets the color of the embed
+		 * @example
+		 * embed.setColor('#FFFFFF')
+		 */
+		setColor(hexString: `#${string}`): this;
+    setFooter(text: string, iconURL?: string): this;
+		setFooter(footer: EmbedFooterOptions): this;
+		setImage(url: string): this;
+		setImage(image: EmbedImageOptions): this;
+		setThumbnail(url: string): this;
+		setThumbnail(thumbnail: EmbedImageOptions): this;
+		setAuthor(author: EmbedAuthorOptions): this;
+    /**
+		 * Sets the author of the embed
+		 * @param name The name of the author
+		 * @param iconURL The url of the author icon
+		 * @param url The url of the author
+		 */
+		setAuthor(name: string, iconURL?: string, url?: string): this;
+		setFields(fields: EmbedField[]): this;
+		addField(field: EmbedField): this;
+		addField(name: string, value: string, inline?: boolean): this;
+		addFields(...fields: EmbedField[] | EmbedField[][]): this;
+		toJSON(): EmbedOptions;
+    static MAX_TITLE_LENGTH: number;
+		static MAX_DESCRIPTION_LENGTH: number;
+		static MAX_FIELD_NAME_LENGTH: number;
+		static MAX_FIELD_VALUE_LENGTH: number;
+		static MAX_FIELDS_LENGTH: number;
+		static MAX_FOOTER_TEXT_LENGTH: number;
+		static MAX_AUTHOR_NAME_LENGTH: number;
+  }
+
   export class ExtendedUser extends User {
     email: string;
     mfaEnabled: boolean;
@@ -3100,8 +3197,10 @@ declare namespace Eris {
     defaultAvatar: string;
     defaultAvatarURL: string;
     discriminator: string;
+    displayName: string;
     game: Activity | null;
     guild: Guild;
+    highestRole: Role;
     id: string;
     joinedAt: number | null;
     mention: string;
@@ -3111,6 +3210,8 @@ declare namespace Eris {
     permission: Permission;
     permissions: Permission;
     premiumSince?: number | null;
+    roleCollection: Collection<Role>;
+    roleColor?: Role;
     roles: string[];
     staticAvatarURL: string;
     status?: Status;
@@ -3123,6 +3224,7 @@ declare namespace Eris {
     edit(options: MemberOptions, reason?: string): Promise<void>;
     kick(reason?: string): Promise<void>;
     removeRole(roleID: string, reason?: string): Promise<void>;
+    send(content: MessageContent, file?: FileContent | FileContent[]): Promise<Message<PrivateChannel>>;
     unban(reason?: string): Promise<void>;
   }
 
@@ -3309,6 +3411,7 @@ declare namespace Eris {
     color: number;
     createdAt: number;
     guild: Guild;
+    hexColor: string;
     hoist: boolean;
     icon: string | null;
     iconURL: string | null;
@@ -3595,6 +3698,7 @@ declare namespace Eris {
     staticAvatarURL: string;
     system: boolean;
     username: string;
+    tag: string
     constructor(data: BaseData, client: Client);
     addRelationship(block?: boolean): Promise<void>;
     deleteNote(): Promise<void>;
@@ -3604,6 +3708,7 @@ declare namespace Eris {
     getDMChannel(): Promise<PrivateChannel>;
     getProfile(): Promise<UserProfile>;
     removeRelationship(): Promise<void>;
+    send(content: MessageContent, file?: FileContent | FileContent[]): Promise<Message<PrivateChannel>>;
   }
 
   export class VoiceChannel extends GuildChannel implements Invitable {
