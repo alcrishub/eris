@@ -2682,6 +2682,130 @@ declare namespace Eris {
 		 * Sets the embed color to a random color
 		 */
 		setColor(random: 'RANDOM'): this;
+    /**
+		 * Sets the embed color to a AQUA
+		 */
+		setColor(aqua: 'AQUA'): this;
+    /**
+		 * Sets the embed color to a DARK_AQUA
+		 */
+		setColor(darkAqua: 'DARK_AQUA'): this;
+    /**
+		 * Sets the embed color to a GREEN
+		 */
+		setColor(green: 'GREEN'): this;
+    /**
+		 * Sets the embed color to a DARK_GREEN
+		 */
+		setColor(darkGreen: 'DARK_GREEN'): this;
+    /**
+		 * Sets the embed color to a BLUE
+		 */
+		setColor(blue: 'BLUE'): this;
+    /**
+		 * Sets the embed color to a DARK_BLUE
+		 */
+		setColor(darkBlue: 'DARK_BLUE'): this;
+    /**
+		 * Sets the embed color to a PURPLE
+		 */
+		setColor(purple: 'PURPLE'): this;
+    /**
+		 * Sets the embed color to a DARK_PURPLE
+		 */
+		setColor(darkPurple: 'DARK_PURPLE'): this;
+    /**
+		 * Sets the embed color to a LUMINOUS_VIVID_PINK
+		 */
+		setColor(luminVividPink: 'LUMINOUS_VIVID_PINK'): this;
+    /**
+		 * Sets the embed color to a DARK_VIVID_PINK
+		 */
+		setColor(darkVividPink: 'DARK_VIVID_PINK'): this;
+    /**
+		 * Sets the embed color to a GOLD
+		 */
+		setColor(gold: 'GOLD'): this;
+    /**
+		 * Sets the embed color to a DARK_GOLD
+		 */
+		setColor(darkGold: 'DARK_GOLD'): this;
+    /**
+		 * Sets the embed color to a ORANGE
+		 */
+		setColor(orange: 'ORANGE'): this;
+    /**
+		 * Sets the embed color to a DARK_ORANGE
+		 */
+		setColor(darkOrange: 'DARK_ORANGE'): this;
+    /**
+		 * Sets the embed color to a RED
+		 */
+		setColor(red: 'RED'): this;
+    /**
+		 * Sets the embed color to a DARK_RED
+		 */
+		setColor(darkRed: 'DARK_RED'): this;
+    /**
+		 * Sets the embed color to a GREY
+		 */
+		setColor(grey: 'GREY'): this;
+    /**
+		 * Sets the embed color to a DARK_GREY
+		 */
+		setColor(darkGrey: 'DARK_GREY'): this;
+    /**
+		 * Sets the embed color to a DARKER_GREY
+		 */
+		setColor(darkerGrey: 'DARKER_GREY'): this;
+    /**
+		 * Sets the embed color to a LIGHT_GREY
+		 */
+		setColor(lightGrey: 'LIGHT_GREY'): this;
+    /**
+		 * Sets the embed color to a NAVY
+		 */
+		setColor(navy: 'NAVY'): this;
+    /**
+		 * Sets the embed color to a DARK_NAVY
+		 */
+		setColor(darkNavy: 'DARK_NAVY'): this;
+    /**
+		 * Sets the embed color to a YELLOW
+		 */
+		setColor(yellow: 'YELLOW'): this;
+    /**
+		 * Sets the embed color to a WHITE
+		 */
+		setColor(white: 'WHITE'): this;
+    /**
+		 * Sets the embed color to a BLURPLE
+		 */
+		setColor(blurple: 'BLURPLE'): this;
+    /**
+		 * Sets the embed color to a GREYPLE 
+		 */
+		setColor(greyple: 'GREYPLE'): this;
+    /**
+		 * Sets the embed color to a DARK_BUT_NOT_BLACK
+		 */
+		setColor(darkButNotBlack: 'DARK_BUT_NOT_BLACK'): this;
+    /**
+		 * Sets the embed color to a NOT_QUITE_BLACK
+		 */
+		setColor(notQuiteBlack: 'NOT_QUITE_BLACK'): this;
+    /**
+		 * Sets the embed color to a FUSCHIA
+		 */
+		setColor(fuschia: 'FUSCHIA'): this;
+    /**
+		 * Sets the embed color to a BLACK
+		 */
+		setColor(black: 'BLACK'): this;
+    /**
+		 * Sets the embed color to a DARK_THEME_BACKGROUND
+		 */
+		setColor(darkThemeBackground: 'DARK_THEME_BACKGROUND'): this;
 		/**
 		 * Sets the color of the embed
 		 * @example
