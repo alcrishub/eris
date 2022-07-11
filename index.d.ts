@@ -3312,9 +3312,11 @@ declare namespace Eris {
     activities?: Activity[];
     avatar: string | null;
     avatarURL: string;
+    bannable: boolean;
     banner?: string | null;
     bannerURL: string | null;
     bot: boolean;
+    client: Client
     clientStatus?: ClientStatus;
     communicationDisabledUntil: number | null;
     createdAt: number;
@@ -3325,8 +3327,10 @@ declare namespace Eris {
     game: Activity | null;
     guild: Guild;
     highestRole: Role;
+    kickable: boolean;
     id: string;
     joinedAt: number | null;
+    manageable: boolean;
     mention: string;
     nick: string | null;
     pending?: boolean;
